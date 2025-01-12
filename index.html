@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch A Sketch</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Etch  A Sketch</h1>
-    <div class="controls">
+   
+
+    <div id="grid-container"></div>
+
+
+     <div class="controls">
         <button id="reset">Reset</button>
         <input type="range"  min="2" max="64" value="16" id="grid-size">
         <label for="grid-size">Grid-size: <span id="grid-label">16</span></label>
     </div>
-
-    <div id="grid-container"></div>
     <script src="script.js"></script>
 
 
