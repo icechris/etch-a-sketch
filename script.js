@@ -51,7 +51,12 @@ function createGrid (size){
 
 createGrid(16)
 
-
+// added Event Listener to change grid size
+gridSize.addEventListener("input", (e) =>{
+   const newSize = e.target.value;
+   gridLabel.textContent = ` Grid Size: ${newSize} * ${newSize}`;
+   createGrid(newSize)
+})
 
 resetButton.addEventListener("click", () =>{
   createGrid(gridSize.value);
