@@ -2,6 +2,10 @@ const gridContainer = document.getElementById("grid-container")
 const gridSize = document.getElementById("grid-size")
 const gridLabel = document.getElementById("grid-label")
 const resetButton = document.getElementById("reset")
+const changeColorButton = document.getElementById("changeColor")
+
+
+let useRandomColors  = true;
 
 
  function getRandomColor (){
@@ -22,9 +26,16 @@ function createGrid (size){
 
     //style the gridItem // Add hover effect  for random color
     gridItem.addEventListener ("mouseover", () =>{
-        gridItem.style.backgroundColor = getRandomColor();
+      if (useRandomColors){
+        gridItem.style.backgroundColor = getRandomColor();} else{
+         let currentOpacity = parseFloat(gridItem.style.opacity) || 0;
+         gridItem.style.backgroundColor = "black";
+         gridItem.style.opacity = Math.min(currentOpacity + 0.1, 1);
+        }
     });
 
+   
+  
 
 
 
@@ -39,3 +50,18 @@ function createGrid (size){
 
 
 createGrid(16)
+
+
+
+resetButton.addEventListener("click", () =>{
+  createGrid(gridSize.value);
+
+})
+
+changeColorButton.addEventListener("click", () =>{
+   useRandomColors = !useRandomColors;
+   changeColorButton.textContent = useRandomColors
+   ? "switch to Black"
+   : "switch to Random"
+ })
+ 

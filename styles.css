@@ -29,11 +29,12 @@ body{
     margin-left: 10px;
 }
 
+
 #grid-container .grid-item:hover{
     background-color: black;
 }
 
-#reset{
+#reset, #changeColor{
     border: none;
     border-radius: 5px;
     padding: 5px 20px;
@@ -43,7 +44,7 @@ body{
     font-size: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-#reset:hover {
+#reset, #changeColor:hover {
   background-color: #45a049; /* Slightly darker green */
   transform: scale(1.05); /* Slight zoom effect */
 }
